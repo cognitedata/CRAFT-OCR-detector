@@ -1,53 +1,38 @@
-## CRAFT: Character-Region Awareness For Text detection
-Official Pytorch implementation of CRAFT text detector | [Paper](https://arxiv.org/abs/1904.01941) | [Pretrained Model](https://drive.google.com/open?id=1Jk4eGD7crsqCCg9C9VjCLkMN3ze8kutZ) | [Supplementary](https://youtu.be/HI8MzpY8KMI)
+# OCR detector for PNID based on CRAFT: CRAFT: Character-Region Awareness For Text detection
+This is an adaptation of the official Pytorch implementation of CRAFT text detector | [Paper](https://arxiv.org/abs/1904.01941) by
 
 **[Youngmin Baek](mailto:youngmin.baek@navercorp.com), Bado Lee, Dongyoon Han, Sangdoo Yun, Hwalsuk Lee.**
- 
 Clova AI Research, NAVER Corp.
 
-### Sample Results
+## Sample Results
+TODO
 
 ### Overview
 PyTorch implementation for CRAFT text detector that effectively detect text area by exploring each character region and affinity between characters. The bounding box of texts are obtained by simply finding minimum bounding rectangles on binary map after thresholding character region and affinity scores. 
 
 <img width="1000" alt="teaser" src="./figures/craft_example.gif">
 
-## Updates
-**13 Jun, 2019**: Initial update
-**20 Jul, 2019**: Added post-processing for polygon result
-**28 Sep, 2019**: Added the trained model on IC15 and the link refiner
-
-
 ## Getting started
 ### Install dependencies
-#### Requirements
+The following are required packages:
 - PyTorch>=0.4.1
 - torchvision>=0.2.1
 - opencv-python>=3.4.2
-- check requiremtns.txt
+Also check requirements.txt for additional required packages:
 ```
 pip install -r requirements.txt
 ```
 
-### Training
-The code for training is not included in this repository, and we cannot release the full training code for IP reason.
+## Training
+TODO 
+Training code is not included yet
+It is planned to bootstrap the training using synthetic data from Synthtext | [Repo](https://github.com/ankush-me/SynthText)
 
 
-### Test instruction using pretrained model
-- Download the trained models
- 
- *Model name* | *Used datasets* | *Languages* | *Purpose* | *Model Link* |
- | :--- | :--- | :--- | :--- | :--- |
-General | SynthText, IC13, IC17 | Eng + MLT | For general purpose | [Click](https://drive.google.com/open?id=1Jk4eGD7crsqCCg9C9VjCLkMN3ze8kutZ)
-IC15 | SynthText, IC15 | Eng | For IC15 only | [Click](https://drive.google.com/open?id=1i2R7UIUqmkUtF0jv_3MXTqmQ_9wuAnLf)
-LinkRefiner | CTW1500 | - | Used with the General Model | [Click](https://drive.google.com/open?id=1XSaFwBkOaFOdtk4Ane3DFyJGPRw6v5bO)
+## Testing
+TODO
 
-* Run with pretrained model
-``` (with python 3.7)
-python test.py --trained_model=[weightfile] --test_folder=[folder path to test images]
-```
-
-The result image and socre maps will be saved to `./result` by default.
+The result image and score maps will be saved to `./result` by default.
 
 ### Arguments
 * `--trained_model`: pretrained model
@@ -65,19 +50,7 @@ The result image and socre maps will be saved to `./result` by default.
 
 
 ## Links
-- WebDemo : https://demo.ocr.clova.ai/
 - Repo of recognition : https://github.com/clovaai/deep-text-recognition-benchmark
-
-## Citation
-```
-@inproceedings{baek2019character,
-  title={Character Region Awareness for Text Detection},
-  author={Baek, Youngmin and Lee, Bado and Han, Dongyoon and Yun, Sangdoo and Lee, Hwalsuk},
-  booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},
-  pages={9365--9374},
-  year={2019}
-}
-```
 
 ## License
 ```
